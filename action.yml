@@ -103,3 +103,9 @@ runs:
       env:
         GOOGLE_CREDENTIALS: ${{ inputs.GOOGLE_CREDENTIALS }}
       shell: bash
+    
+    - name: Terraform Destroy
+      run: terraform destroy -input=false tf.plan
+      env:
+        GOOGLE_CREDENTIALS: ${{ inputs.GOOGLE_CREDENTIALS }}
+      shell: bash
